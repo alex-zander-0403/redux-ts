@@ -3,4 +3,7 @@ import { thunk } from "redux-thunk";
 import { rootReducer } from "./reducers";
 
 // Создаем store с явным указанием типа
-export const store = createStore(rootReducer);
+export const store = createStore(
+  rootReducer as any, // временное
+  applyMiddleware(thunk),
+);
