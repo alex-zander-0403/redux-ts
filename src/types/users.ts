@@ -1,15 +1,15 @@
-//Enum для стандартизации названий action типов действий
-export enum UserActionTypes {
-  FETCH_USERS = "FETCH_USERS",
-  FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
-  FETCH_USERS_ERROR = "FETCH_USERS_ERROR",
-}
-
 // интерфейс состояния user state
 export interface UserState {
   users: any[]; // массив пользователей
   loading: boolean; // флаг загрузки
   error: null | string; // ошибка или null
+}
+
+// Enum для стандартизации названий action типов действий
+export enum UserActionTypes {
+  FETCH_USERS = "FETCH_USERS",
+  FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
+  FETCH_USERS_ERROR = "FETCH_USERS_ERROR",
 }
 
 // ----
