@@ -18,22 +18,22 @@ export enum TodoActionTypes {
 
 // интерфейс для получения todos
 interface FetchTodosAction {
-  type: TodoActionTypes.FETCH_TODOS; // конкретное значение из enum
+  type: TodoActionTypes.FETCH_TODOS; // значение из enum
 }
 // интерфейс для успешного получения todos
 interface FetchUsersSuccessAction {
-  type: TodoActionTypes.FETCH_TODOS_SUCCESS; // конкретное значение из enum
-  payload: any[]; // массив пользователей
+  type: TodoActionTypes.FETCH_TODOS_SUCCESS; // значение из enum
+  payload: any[]; // массив todos при успехе
 }
 // интерфейс для ошибки получения todos
 interface FetchUsersErrorAction {
-  type: TodoActionTypes.FETCH_TODOS_ERROR; // конкретное значение из enum
-  payload: string; // текст ошибки
+  type: TodoActionTypes.FETCH_TODOS_ERROR; // значение из enum
+  payload: string; // текст при ошибке
 }
 
 interface SetTodoPage {
-  type: TodoActionTypes.SET_TODO_PAGE; // конкретное значение из enum
-  payload: number;
+  type: TodoActionTypes.SET_TODO_PAGE; // значение из enum
+  payload: number; // номер страницы
 }
 
 export type TodoAction =
