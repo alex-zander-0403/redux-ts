@@ -1,20 +1,17 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { useTypedSelector } from "../hooks/useTypedSelector";
-import { fetchUsers } from "../store/action-creators/users";
-import { ThunkDispatch } from "redux-thunk";
-import { RootState } from "../store/reducers";
-import { AnyAction } from "redux";
+import { useActions } from "../hooks/useActions";
 
 //
 export const UserList: React.FC = () => {
   const { users, loading, error } = useTypedSelector((state) => state.users);
 
   // Правильная типизация dispatch для thunk
-  const dispatch = useDispatch<ThunkDispatch<RootState, unknown, AnyAction>>();
+  // const dispatch = useDispatch<ThunkDispatch<RootState, unknown, AnyAction>>();
+  const { fetchUsers } = useActions();
 
   useEffect(() => {
-    dispatch(fetchUsers());
+    fetchUsers();
   }, []);
 
   // =======================
