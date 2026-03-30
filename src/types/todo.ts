@@ -17,16 +17,16 @@ export enum TodoActionTypes {
 // ----
 
 // интерфейс для получения todos
-interface FetchTodosAction {
+interface FetchTodoAction {
   type: TodoActionTypes.FETCH_TODOS; // значение из enum
 }
 // интерфейс для успешного получения todos
-interface FetchUsersSuccessAction {
+interface FetchTodoSuccessAction {
   type: TodoActionTypes.FETCH_TODOS_SUCCESS; // значение из enum
   payload: any[]; // массив todos при успехе
 }
 // интерфейс для ошибки получения todos
-interface FetchUsersErrorAction {
+interface FetchTodoErrorAction {
   type: TodoActionTypes.FETCH_TODOS_ERROR; // значение из enum
   payload: string; // текст при ошибке
 }
@@ -36,8 +36,9 @@ interface SetTodoPage {
   payload: number; // номер страницы
 }
 
+// union тип для action
 export type TodoAction =
-  | FetchTodosAction
-  | FetchUsersSuccessAction
-  | FetchUsersErrorAction
+  | FetchTodoAction
+  | FetchTodoSuccessAction
+  | FetchTodoErrorAction
   | SetTodoPage;

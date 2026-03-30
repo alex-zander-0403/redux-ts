@@ -2,9 +2,9 @@ import { TodoAction, TodoActionTypes, TodoState } from "../../types/todo";
 
 //
 const initialState: TodoState = {
+  todos: [],
   loading: false,
   error: null,
-  todos: [],
   page: 1,
   limit: 5,
 };
