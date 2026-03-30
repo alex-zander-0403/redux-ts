@@ -2,7 +2,7 @@ import { Dispatch } from "redux";
 import { TodoAction, TodoActionTypes } from "../../types/todo";
 
 // async action для получения данных с сервера
-export const fetchUsers = (page = 1, limit = 5) => {
+export const fetchTodos = (page = 1, limit = 5) => {
   return async (dispatch: Dispatch<TodoAction>) => {
     try {
       dispatch({ type: TodoActionTypes.FETCH_TODOS });
